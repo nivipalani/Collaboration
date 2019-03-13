@@ -3,26 +3,28 @@ package com.collaboration.collaborationbackend.model;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+@Entity
 public class BlogComment {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int blogComment_Id;
-	
+
 	@ManyToOne
 	Blog blog;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String blog_Comment;
 
-	@Column(nullable=false)
+	@Column(nullable = false)
 	Date blogComment_Date;
-	
+
 	@ManyToOne
 	UserDetail userdetail;
 
@@ -65,8 +67,5 @@ public class BlogComment {
 	public void setUserdetail(UserDetail userdetail) {
 		this.userdetail = userdetail;
 	}
-	
-	
-	
-	
+
 }

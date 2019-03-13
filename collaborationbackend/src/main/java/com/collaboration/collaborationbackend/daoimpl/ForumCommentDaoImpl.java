@@ -4,11 +4,16 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.collaboration.collaborationbackend.dao.ForumCommentDao;
 import com.collaboration.collaborationbackend.model.Blog;
 import com.collaboration.collaborationbackend.model.ForumComment;
 
+
+@Repository("forumCommentDao")
+@Transactional
 public class ForumCommentDaoImpl implements ForumCommentDao {
 
 	@Autowired
