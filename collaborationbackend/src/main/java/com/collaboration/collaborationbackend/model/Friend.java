@@ -11,13 +11,13 @@ import javax.persistence.ManyToOne;
 public class Friend {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int friend_Id;
-	
+
 	@ManyToOne
-	UserDetail user;
-	
-	@Column(nullable=false)
+	UserDetail userdetail;
+
+	@Column(nullable = false)
 	String friend_Status;
 
 	public int getFriend_Id() {
@@ -28,14 +28,12 @@ public class Friend {
 		this.friend_Id = friend_Id;
 	}
 
-	
-
-	public UserDetail getUser() {
-		return user;
+	public UserDetail getUserdetail() {
+		return userdetail;
 	}
 
-	public void setUser(UserDetail user) {
-		this.user = user;
+	public void setUserdetail(UserDetail userdetail) {
+		this.userdetail = userdetail;
 	}
 
 	public String getFriend_Status() {
@@ -45,7 +43,5 @@ public class Friend {
 	public void setFriend_Status(String friend_Status) {
 		this.friend_Status = friend_Status;
 	}
-	
-	
-	
+
 }

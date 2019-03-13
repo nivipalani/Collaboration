@@ -23,7 +23,7 @@ public class UserDetail {
 	@Column(nullable=false)
 	String password;
 	
-	@Column(nullable=false)
+	@Column(nullable=false,unique=true)
 	String emailId;
 	
 	@Column(nullable=false)

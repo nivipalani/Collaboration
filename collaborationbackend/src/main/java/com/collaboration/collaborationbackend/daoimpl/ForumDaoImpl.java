@@ -67,7 +67,7 @@ public class ForumDaoImpl implements ForumDao {
 	public Forum getOneForum(int forum_id) {
 		// TODO Auto-generated method stub
 		try {
-			return (Forum) sessionFactory.getCurrentSession().createQuery("from Forum where forum_id=" + forum_id)
+			return (Forum) sessionFactory.getCurrentSession().createQuery("from Forum where forum_Id=" + forum_id)
 					.uniqueResult();
 
 		} catch (Exception e) {

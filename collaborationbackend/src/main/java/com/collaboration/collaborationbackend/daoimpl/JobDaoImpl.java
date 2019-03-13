@@ -66,7 +66,7 @@ public class JobDaoImpl implements JobDao {
 	public Job getOneJob(int job_id) {
 		// TODO Auto-generated method stub
 		try {
-			return (Job) sessionFactory.getCurrentSession().createQuery("from Job where job_id=" + job_id)
+			return (Job) sessionFactory.getCurrentSession().createQuery("from Job where job_Id=" + job_id)
 					.uniqueResult();
 
 		} catch (Exception e) {

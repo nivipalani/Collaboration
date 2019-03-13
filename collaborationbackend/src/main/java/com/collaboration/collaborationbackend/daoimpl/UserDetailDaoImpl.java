@@ -48,7 +48,7 @@ public class UserDetailDaoImpl implements UserDetailDao {
 		// TODO Auto-generated method stub
 		try
 		{
-		return (UserDetail)sessionFactory.getCurrentSession().createQuery("from UserDetail where user_id="+userId).uniqueResult();
+		return (UserDetail)sessionFactory.getCurrentSession().createQuery("from UserDetail where user_Id="+userId).uniqueResult();
 		
 		}
 		catch(Exception e)

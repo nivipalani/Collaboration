@@ -11,24 +11,24 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Forum {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int forum_Id;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String forum_Name;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String forum_Content;
-	
+
 	@ManyToOne
-	UserDetail user;
-	
-	@Column(nullable=false)
+	UserDetail userdetail;
+
+	@Column(nullable = false)
 	Date comment_Date;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String forum_status;
 
 	public int getForum_Id() {
@@ -47,7 +47,6 @@ public class Forum {
 		this.forum_Name = forum_Name;
 	}
 
-
 	public String getForum_Content() {
 		return forum_Content;
 	}
@@ -56,12 +55,12 @@ public class Forum {
 		this.forum_Content = forum_Content;
 	}
 
-	public UserDetail getUser() {
-		return user;
+	public UserDetail getUserdetail() {
+		return userdetail;
 	}
 
-	public void setUser(UserDetail user) {
-		this.user = user;
+	public void setUserdetail(UserDetail userdetail) {
+		this.userdetail = userdetail;
 	}
 
 	public Date getComment_Date() {
@@ -79,7 +78,5 @@ public class Forum {
 	public void setForum_status(String forum_status) {
 		this.forum_status = forum_status;
 	}
-	
-	
 
 }

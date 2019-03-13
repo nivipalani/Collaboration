@@ -50,7 +50,7 @@ public class BlogUnitTestCase {
 		blog.setCreateDate(new Date());
 		blog.setLikes(1);
 		blog.setStatus("online");
-		blog.setUser(d);
+		//blog.setUser(d);
 		
 		assertTrue(blogdao.addBlog(blog));
 

@@ -67,7 +67,7 @@ public class BlogDaoImpl implements BlogDao {
 	public Blog getOneBlog(int blog_id) {
 		// TODO Auto-generated method stub
 		try {
-			return (Blog) sessionFactory.getCurrentSession().createQuery("from Blog where blog_id=" + blog_id)
+			return (Blog) sessionFactory.getCurrentSession().createQuery("from Blog where blogId=" + blog_id)
 					.uniqueResult();
 
 		} catch (Exception e) {

@@ -71,7 +71,7 @@ public class FriendDaoImpl implements FriendDao {
 		// TODO Auto-generated method stub
 		try
 		{
-		return (Friend)sessionFactory.getCurrentSession().createQuery("from Friend where friend_id="+friend_id).uniqueResult();
+		return (Friend)sessionFactory.getCurrentSession().createQuery("from Friend where friend_Id="+friend_id).uniqueResult();
 		
 		}
 		catch(Exception e)

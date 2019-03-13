@@ -23,7 +23,7 @@ public class Blog {
 	String blogContent;
 
 	@ManyToOne
-	UserDetail user;
+	UserDetail userdetail;
 
 	@Column(nullable = false)
 	Date createDate;
@@ -58,12 +58,13 @@ public class Blog {
 		this.blogContent = blogContent;
 	}
 
-	public UserDetail getUser() {
-		return user;
+
+	public UserDetail getUserdetail() {
+		return userdetail;
 	}
 
-	public void setUser(UserDetail user) {
-		this.user = user;
+	public void setUserdetail(UserDetail userdetail) {
+		this.userdetail = userdetail;
 	}
 
 	public Date getCreateDate() {
