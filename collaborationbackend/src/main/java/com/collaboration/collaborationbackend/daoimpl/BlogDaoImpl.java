@@ -76,24 +76,26 @@ public class BlogDaoImpl implements BlogDao {
 		}
 	}
 
-	public boolean incrementLikes(Blog blog) {
+	public List<Blog> selectApprovedBlog() {
 		// TODO Auto-generated method stub
-		return false;
+		try {
+			return sessionFactory.getCurrentSession().createQuery("from Blog where status='"+true+"'").list();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
-	public boolean incrementDisLikes(Blog blog) {
+	public List<Blog> selectUserBlog(int userId) {
 		// TODO Auto-generated method stub
-		return false;
-	}
+		try {
+			return sessionFactory.getCurrentSession().createQuery("from Blog where userdetail.user_Id="+userId).list();
 
-	public boolean approveBlog(Blog blog) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean rejectBlog(Blog blog) {
-		// TODO Auto-generated method stub
-		return false;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
 	}
 
 }

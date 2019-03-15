@@ -15,11 +15,11 @@ public interface BlogDao {
 
 	Blog getOneBlog(int blog_id);
 	
-	boolean incrementLikes(Blog blog);
+	List<Blog> selectApprovedBlog();
 	
-	boolean incrementDisLikes(Blog blog);
+	List<Blog> selectUserBlog(int userId);
 	
-	boolean approveBlog(Blog blog);
-	
-	boolean rejectBlog(Blog blog);
+//	boolean incrementLikes(Blog blog);
+//	
+//	boolean incrementDisLikes(Blog blog);
 }

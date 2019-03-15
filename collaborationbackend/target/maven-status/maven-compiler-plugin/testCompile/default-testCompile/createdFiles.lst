@@ -1,0 +1,4 @@
+snippet\Snippet.class
+com\collaboration\collaborationbackend\AppTest.class
+com\collaboration\collaborationbackend\BlogUnitTestCase.class
+com\collaboration\collaborationbackend\GeneralTestCase.class

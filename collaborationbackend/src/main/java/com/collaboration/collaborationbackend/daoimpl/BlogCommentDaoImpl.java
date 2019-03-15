@@ -54,22 +54,11 @@ public class BlogCommentDaoImpl implements BlogCommentDao {
 		}
 	}
 
-	public List<BlogComment> selectAllBlogComment() {
+	public List<BlogComment> selectAllBlogComment(int blog_id) {
 		// TODO Auto-generated method stub
 		try {
-			return sessionFactory.getCurrentSession().createQuery("from BlogComment").list();
-
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return null;
-		}
-	}
-
-	public BlogComment selectOneBlogComment(int blogcomment_id) {
-		// TODO Auto-generated method stub
-		try {
-			return (BlogComment) sessionFactory.getCurrentSession()
-					.createQuery("from BlogComment where blogComment_Id=" + blogcomment_id).uniqueResult();
+			return sessionFactory.getCurrentSession()
+					.createQuery("from BlogComment where blog.blogId=" + blog_id).list();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());

@@ -13,9 +13,9 @@ public interface BlogCommentDao {
 
 	boolean deleteBlogComment(BlogComment blogcomment);
 
-	List<BlogComment> selectAllBlogComment();
+	List<BlogComment> selectAllBlogComment(int blog_id);
 
-	BlogComment selectOneBlogComment(int blogcomment_id);
+	//BlogComment selectOneBlogComment(int blogcomment_id);
 
 
 }

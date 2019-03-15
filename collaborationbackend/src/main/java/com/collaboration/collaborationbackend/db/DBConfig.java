@@ -1,6 +1,6 @@
 package com.collaboration.collaborationbackend.db;
 
-import org.springframework.context.annotation.Bean;
+
 
 import java.util.Properties;
 import javax.sql.DataSource;
@@ -16,7 +16,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan("com.collaboration")
+@ComponentScan("com.collaboration.collaborationbackend")
 @EnableTransactionManagement
 public class DBConfig {
 

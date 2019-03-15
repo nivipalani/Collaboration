@@ -9,14 +9,14 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.collaboration.collaborationbackend.dao.BlogDao;
-import com.collaboration.collaborationbackend.model.Blog;
-import com.collaboration.collaborationbackend.model.UserDetail;
+//import com.collaboration.collaborationbackend.dao.BlogDao;
+//import com.collaboration.collaborationbackend.model.Blog;
+//import com.collaboration.collaborationbackend.model.UserDetail;
 
 public class BlogUnitTestCase {
-	
-	@Autowired
-	BlogDao blogdao;
+
+//	@Autowired
+//	BlogDao blogdao;
 
 	// @Test
 	// public void test() {
@@ -31,29 +31,28 @@ public class BlogUnitTestCase {
 
 	}
 
-	@Test
-	public void createBlogUnitTest()
-	{
-		UserDetail d=new UserDetail();
-		d.setEmailId("mu@gmail.com");
-		d.setFirstName("dfd");
-		d.setIsOnline("offline");
-		d.setLastName("sfsf0");
-		d.setPassword("dfsdfsd");
-		d.setRole("dfd");
-		d.setUser_Id(34);
-		
-		Blog blog = new Blog();
-		
-		blog.setBlogName("nivetha");
-		blog.setBlogContent("good");
-		blog.setCreateDate(new Date());
-		blog.setLikes(1);
-		blog.setStatus("online");
-		//blog.setUser(d);
-		
-		assertTrue(blogdao.addBlog(blog));
-
-	}
+//	@Test
+//	public void createBlogUnitTest() {
+//		// UserDetail d=new UserDetail();
+//		// d.setEmailId("mu@gmail.com");
+//		// d.setFirstName("dfd");
+//		// d.setIsOnline("offline");
+//		// d.setLastName("sfsf0");
+//		// d.setPassword("dfsdfsd");
+//		// d.setRole("dfd");
+//		// d.setUser_Id(34);
+//		//
+//		Blog blog = new Blog();
+//
+//		blog.setBlogName("nivetha");
+//		blog.setBlogContent("good");
+//		blog.setCreateDate(new Date());
+//		blog.setLikes(1);
+//		blog.setStatus("online");
+//		// blog.setUser(d);
+//
+//		//assertTrue(blogdao.addBlog(blog));
+//
+//	}
 
 }
