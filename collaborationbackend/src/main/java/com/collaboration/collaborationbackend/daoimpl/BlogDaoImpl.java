@@ -79,7 +79,7 @@ public class BlogDaoImpl implements BlogDao {
 	public List<Blog> selectApprovedBlog() {
 		// TODO Auto-generated method stub
 		try {
-			return sessionFactory.getCurrentSession().createQuery("from Blog where status='"+true+"'").list();
+			return sessionFactory.getCurrentSession().createQuery("from Blog where status='" + true + "'").list();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -90,12 +90,14 @@ public class BlogDaoImpl implements BlogDao {
 	public List<Blog> selectUserBlog(int userId) {
 		// TODO Auto-generated method stub
 		try {
-			return sessionFactory.getCurrentSession().createQuery("from Blog where userdetail.user_Id="+userId).list();
+			return sessionFactory.getCurrentSession().createQuery("from Blog where userdetail.user_Id=" + userId)
+					.list();
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			return null;
 		}
+
 	}
 
 }

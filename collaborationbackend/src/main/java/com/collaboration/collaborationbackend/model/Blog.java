@@ -11,6 +11,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+
+
+
 @Entity
 public class Blog {
 
@@ -29,6 +32,7 @@ public class Blog {
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
+	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MMM-dd HH:mm:ss z")
 	Date createDate;
 
 	@Column(nullable = false)
