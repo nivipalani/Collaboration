@@ -45,4 +45,41 @@ public class UserController {
 			return new ResponseEntity<UserDetail>(userdetail, HttpStatus.ACCEPTED);
 	}
 
+	@PostMapping("/online/{userid}")
+	ResponseEntity<Void> makeOnLine(@PathVariable("userid") int user_id) {
+		UserDetail userdetail = userdetaildao.selectOneUser(user_id);
+		if (userdetaildao.makeOnline(userdetail))
+			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+		else
+			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+	}
+
+	@PostMapping("/offline/{userid}")
+	ResponseEntity<Void> makeOffLine(@PathVariable("userid") int user_id) {
+		UserDetail userdetail = userdetaildao.selectOneUser(user_id);
+		if (userdetaildao.makeOffline(userdetail))
+			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+		else
+			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+	}
+
+	@PostMapping("/reject/{userid}")
+	ResponseEntity<Void> rejectUser(@PathVariable("userid") int user_id) {
+		UserDetail userdetail = userdetaildao.selectOneUser(user_id);
+		if (userdetaildao.rejectUser(userdetail))
+			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+		else
+			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+
+	}
+
+	@PostMapping("/approve/{userid}")
+	ResponseEntity<Void> approveUser(@PathVariable("userid") int user_id) {
+		UserDetail userdetail = userdetaildao.selectOneUser(user_id);
+		if (userdetaildao.approveUser(userdetail))
+			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+		else
+			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+	}
+
 }

@@ -60,22 +60,62 @@ public class UserDetailDaoImpl implements UserDetailDao {
 
 	public boolean makeOffline(UserDetail user) {
 		// TODO Auto-generated method stub
-		return false;
+		user.setIsOnline("false");
+		try
+		{
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 
 	public boolean makeOnline(UserDetail user) {
 		// TODO Auto-generated method stub
-		return false;
+		user.setIsOnline("true");
+		try
+		{
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 
 	public boolean approveUser(UserDetail user) {
 		// TODO Auto-generated method stub
-		return false;
+		user.setStatus("true");
+		try
+		{
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
 
 	public boolean rejectUser(UserDetail user) {
 		// TODO Auto-generated method stub
-		return false;
+		user.setStatus("false");
+		try
+		{
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			return false;
+		}
 	}
-
+	
 }
