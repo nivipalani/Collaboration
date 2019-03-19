@@ -15,7 +15,7 @@ public interface BlogCommentDao {
 
 	List<BlogComment> selectAllBlogComment(int blog_id);
 
-	//BlogComment selectOneBlogComment(int blogcomment_id);
+	BlogComment selectOneBlogComment(int blogcomment_id);
 
 
 }

@@ -66,4 +66,15 @@ public class BlogCommentDaoImpl implements BlogCommentDao {
 		}
 	}
 
+	public BlogComment selectOneBlogComment(int blogcomment_id) {
+		// TODO Auto-generated method stub
+		try {
+			return (BlogComment) sessionFactory.getCurrentSession().createQuery("from BlogComment where blogComment_Id=" + blogcomment_id).uniqueResult();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
+		}
+	}
+
 }

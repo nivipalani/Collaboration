@@ -68,7 +68,7 @@ public class BlogController {
 			return new ResponseEntity<List<Blog>>(blog, HttpStatus.ACCEPTED);
 	}
 	
-	@GetMapping("/{userid}")
+	@GetMapping("/user/{userid}")
 	ResponseEntity<List<Blog>> viewUserBlog(@PathVariable("userid") int user_id) {
 		List<Blog> blog = blogDao.selectUserBlog(user_id);
 		if (blog==null)

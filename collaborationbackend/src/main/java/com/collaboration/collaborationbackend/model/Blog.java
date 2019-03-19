@@ -11,8 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-
-
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class Blog {
@@ -32,7 +31,7 @@ public class Blog {
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
-	//@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MMM-dd HH:mm:ss z")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MMM-dd")
 	Date createDate;
 
 	@Column(nullable = false)
