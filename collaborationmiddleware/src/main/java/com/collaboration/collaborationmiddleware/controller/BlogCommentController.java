@@ -1,5 +1,6 @@
 package com.collaboration.collaborationmiddleware.controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +10,13 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.collaboration.collaborationbackend.dao.BlogCommentDao;
+import com.collaboration.collaborationbackend.dao.BlogDao;
 import com.collaboration.collaborationbackend.model.Blog;
 import com.collaboration.collaborationbackend.model.BlogComment;
 
@@ -23,6 +26,9 @@ public class BlogCommentController {
 
 	@Autowired
 	BlogCommentDao blogcommentdao;
+	
+	@Autowired
+	BlogDao blogdao;
 
 	@PostMapping
 	ResponseEntity<Void> addComment(@RequestBody BlogComment blogcomment) {
@@ -32,8 +38,11 @@ public class BlogCommentController {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 	}
 
-	@PostMapping("/update")
-	ResponseEntity<Void> updateComment(@RequestBody BlogComment blogcomment) {
+	@PutMapping("/updateBlogComment/{blogcommentid}/{comment}")
+	ResponseEntity<Void> updateComment(@PathVariable("blogcommentid") int blogcomment_id,@PathVariable("comment")String blog_Comment) {
+		BlogComment blogcomment=blogcommentdao.selectOneBlogComment(blogcomment_id);
+		blogcomment.setBlogComment_Date(new Date());
+		blogcomment.setBlog_Comment(blog_Comment);
 		if (blogcommentdao.updateBlogComment(blogcomment))
 			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
 		else
@@ -48,7 +57,7 @@ public class BlogCommentController {
 			return new ResponseEntity<BlogComment>(HttpStatus.NOT_ACCEPTABLE);
 	}
 
-	@GetMapping("/{blogid")
+	@GetMapping("/{blogid}")
 	ResponseEntity<List<BlogComment>> viewAllBlogComment(@PathVariable("blogid") int blog_id) {
 		List<BlogComment> blogcomment = blogcommentdao.selectAllBlogComment(blog_id);
 		if (blogcomment.isEmpty())

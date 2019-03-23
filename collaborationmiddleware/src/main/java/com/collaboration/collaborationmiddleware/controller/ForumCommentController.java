@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.collaboration.collaborationbackend.dao.ForumCommentDao;
 import com.collaboration.collaborationbackend.model.Blog;
+import com.collaboration.collaborationbackend.model.BlogComment;
 import com.collaboration.collaborationbackend.model.ForumComment;
 
 @RestController
@@ -34,15 +36,18 @@ public class ForumCommentController {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 	}
 
-	ResponseEntity<Void> updateForumComment(@RequestBody ForumComment forumcomment) {
+	@PutMapping("/updateForumComment/{forumcommentid}/{comment}")
+	ResponseEntity<Void> updateForumComment(@PathVariable("forumcommentid") int forumcomment_id,@PathVariable("comment") String forum_Comment) {
+		ForumComment forumcomment=forumcommentdao.selectOneForumComment(forumcomment_id);
 		forumcomment.setForumcomment_Date(new Date());
-		if (forumcommentdao.createForumComment(forumcomment))
+		forumcomment.setForum_Comment(forum_Comment);
+		if (forumcommentdao.updateForumComment(forumcomment))
 			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
 		else
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 
 	}
-
+	
 	@DeleteMapping("/{forumcommentid}")
 	ResponseEntity<ForumComment> deleteForumComment(@PathVariable("forumcommentid") int forumcomment_id) {
 		if (forumcommentdao.deleteForumComment(forumcommentdao.selectOneForumComment(forumcomment_id)))

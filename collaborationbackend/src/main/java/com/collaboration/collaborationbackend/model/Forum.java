@@ -31,7 +31,7 @@ public class Forum {
 
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
-	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MMM-dd")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
 	Date comment_Date;
 
 	@Column(nullable = false)

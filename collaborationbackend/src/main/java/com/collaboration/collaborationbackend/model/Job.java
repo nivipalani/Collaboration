@@ -32,6 +32,12 @@ public class Job {
 	String status;
 	
 	@Column(nullable=false)
+	int vacancy;
+	
+	@Column(nullable=false)
+	int salary;
+	
+	@Column(nullable=false)
 	@Temporal(TemporalType.DATE)
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MMM-dd")
 	Date published_Date;
@@ -83,6 +89,24 @@ public class Job {
 	public void setPublished_Date(Date published_Date) {
 		this.published_Date = published_Date;
 	}
+
+	public int getVacancy() {
+		return vacancy;
+	}
+
+	public void setVacancy(int vacancy) {
+		this.vacancy = vacancy;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	
 	
 	
 
