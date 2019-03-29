@@ -57,6 +57,23 @@ public class UserDetailDaoImpl implements UserDetailDao {
 			return null;
 		}
 	}
+	
+	public UserDetail selectOneUserByEmail(String emailid) {
+		// TODO Auto-generated method stub
+		try
+		{
+			return (UserDetail)sessionFactory.getCurrentSession().createQuery("from UserDetail where emailId='"+emailid+"'").uniqueResult();
+			
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+			return null;
+		}
+		
+	}
+	
+	
 
 	public boolean makeOffline(UserDetail user) {
 		// TODO Auto-generated method stub
@@ -117,5 +134,6 @@ public class UserDetailDaoImpl implements UserDetailDao {
 			return false;
 		}
 	}
+
 	
 }

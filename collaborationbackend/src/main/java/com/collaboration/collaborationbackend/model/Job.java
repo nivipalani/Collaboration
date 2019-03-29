@@ -28,7 +28,7 @@ public class Job {
 	@Column(nullable=false)
 	String qualification;
 	
-	@Column(nullable=false)
+	@Column(nullable=false)	
 	String status;
 	
 	@Column(nullable=false)

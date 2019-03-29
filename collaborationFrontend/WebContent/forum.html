@@ -1,0 +1,43 @@
+<style>
+
+/* Credit to bootsnipp.com for the css for the color graph 
+ ESTO SOLO ES PARA EL FORMULARIO DE LOGIN
+*/
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+  background-image: -webkit-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+  background-image: -moz-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+  background-image: -o-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+  background-image: linear-gradient(to right, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);}
+</style>
+
+<div class="container" ng-controller="fcontroller as fc">
+    
+<div class="row" style="margin-top:60px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    	<form role="form" method="post" ng-submit="fc.add()">
+			<fieldset>
+				<h1 align="center">Forum</h1>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="text" name="forumname" id="forumname" class="form-control input-lg" placeholder="Forum Name" ng-model="fc.forum.forum_Name">
+				</div>
+					<div class="form-group">
+					<textarea name="forumcontent" id="forumcontent" class="form-control input-lg" placeholder="Forum Content" ng-model="fc.forum.forum_Content"></textarea>
+                    
+				</div>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 " style="margin-left:25%;margin-top:5%">
+						<input type="submit"  class="btn btn-lg btn-primary btn-block" value="Add Forum">
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+</div>

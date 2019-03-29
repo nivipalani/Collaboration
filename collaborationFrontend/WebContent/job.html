@@ -1,0 +1,52 @@
+<style>
+
+/* Credit to bootsnipp.com for the css for the color graph 
+ ESTO SOLO ES PARA EL FORMULARIO DE LOGIN
+*/
+.colorgraph {
+  height: 5px;
+  border-top: 0;
+  background: #c4e17f;
+  border-radius: 5px;
+   background-image: -webkit-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+  background-image: -moz-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+  background-image: -o-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+  background-image: linear-gradient(to right, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);}
+</style>
+
+<div class="container" ng-controller="jcontroller as jc">
+    
+<div class="row" style="margin-top:60px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    	<form role="form" ng-submit="jc.submit()" method="post">
+			<fieldset>
+				<h1 align="center">Job</h1>
+				<hr class="colorgraph">
+				<div class="form-group">
+                    <input type="text" name="jobprof" id="jobprof" class="form-control input-lg" placeholder="Job Profile" ng-model="jc.job.job_Profile">
+				</div>
+				<div class="form-group">
+                    <input type="text" name="jobqual" id="jobqual" class="form-control input-lg" placeholder="Qualification" ng-model="jc.job.qualification">
+				</div>
+				<div class="form-group">
+                    <input type="text" name="jobvac" id="jobvac" class="form-control input-lg" placeholder="Vacancy" ng-model="jc.job.vacancy">
+				</div>
+				<div class="form-group">
+                    <input type="text" name="jobsal" id="jobsal" class="form-control input-lg" placeholder="Salary" ng-model="jc.job.salary">
+				</div>
+					<div class="form-group">
+					<textarea name="jobdesct" id="jobdesc" class="form-control input-lg" placeholder="Job Description" ng-model="jc.job.job_description"/>
+                    
+				</div>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 " style="margin-left:25%;margin-top:5%">
+						<input type="submit" value="Add Job" class="btn btn-lg btn-primary btn-block">
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+
+</div>

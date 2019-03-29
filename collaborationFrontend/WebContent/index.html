@@ -1,0 +1,166 @@
+<html>
+<head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css"
+	integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd"
+	crossorigin="anonymous">
+<!-- font awesome -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+	rel="stylesheet"
+	integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+	crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+
+<script src="js/app.js"></script>
+<script src="js/UserJs/UserController.js"></script>
+<script src="js/JobJs/JobController.js"></script>
+<script src="js/BlogJs/BlogController.js"></script>
+<script src="js/ForumJs/ForumController.js"></script>
+
+
+
+
+<!------ Include the above in your HEAD tag ---------->
+<script>
+	$(document).ready(function() {
+		$('.navbar-light .dmenu').hover(function() {
+			$(this).find('.sm-menu').first().stop(true, true).slideDown(150);
+		}, function() {
+			$(this).find('.sm-menu').first().stop(true, true).slideUp(105)
+		});
+	});
+</script>
+<style>
+.navbar {
+	background: #344367 !important;
+	font-size: 20px;
+	font-family: casteller;
+}
+
+.dropdown {
+	border-radius: 0;
+	border: 0;
+	font-size: 20px;
+	font-family: casteller;
+}
+
+.dropdown-menu {
+	background: #344367;
+	border: 0;
+	top: 80%;
+	border-radius: 0px 0px 5px 5px;
+	font-size: 15px;
+}
+
+.dropdown-item:hover {
+	background: none;
+	font-color: #fff;
+}
+
+.dropdown-menu a {
+	color: #fff;
+}
+
+.navbar .nav-item .nav-link {
+	color: #eee !important;
+}
+
+.navbar .nav-item .nav-link:hover .navbar .nav-item .nav-link {
+	color: red !important;
+}
+
+.footer {
+	background-color: #344367;
+	text-align: center;
+}
+
+#justpushtobottom {
+	height: 82vh;
+}
+
+.h6 {
+	color: #ffffff;
+	font-size: 15px;
+	font-family: casteller;
+}
+</style>
+<body ng-app="myApp">
+	<nav class="navbar navbar-expand-sm   navbar-light bg-light">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo03"
+			aria-controls="navbarTogglerDemo03" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#/">DomainBee</a>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item"><a class="nav-link" href="#/">Home <span
+						class="sr-only">(current)</span></a></li>
+
+
+				<li class="nav-item"><a class="nav-link" href="#/login">Login</a></li>
+				<li class="nav-item"><a class="nav-link" href="#/register">Register</a>
+				</li>
+				<li class="nav-item dropdown dmenu"><a
+					class="nav-link dropdown-toggle" href="#" id="navbardrop"
+					data-toggle="dropdown"> Blog </a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="#/blog">Add Blog</a> <a
+							class="dropdown-item" href="#">Show Blog</a>
+					</div></li>
+				<li class="nav-item dropdown dmenu"><a
+					class="nav-link dropdown-toggle" href="#" id="navbardrop"
+					data-toggle="dropdown"> Forum </a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="#/forum">Add Forum</a> <a
+							class="dropdown-item" href="#">Show Forum</a>
+					</div></li>
+				<li class="nav-item dropdown dmenu"><a
+					class="nav-link dropdown-toggle" href="#" id="navbardrop"
+					data-toggle="dropdown"> Job </a>
+					<div class="dropdown-menu sm-menu">
+						<a class="dropdown-item" href="#/job">Add Job</a> <a
+							class="dropdown-item" href="#">Show Job</a>
+					</div></li>
+
+
+			</ul>
+
+		</div>
+	</nav>
+	<div style="min-height: 450px" ng-view></div>
+	<footer class="footer p-t-3">
+		<div class="container">
+
+			<a href="https://www.facebook.com"><i
+				class="fa fa-facebook-official fa-2x"></i></a> <a
+				href="https://www.twitter.com"><i class="fa fa-twitter fa-2x"></i></a>
+			<a href="https://www.googleplus.com"><i
+				class="fa fa-google-plus fa-2x"></i></a> <a
+				href="https://www.linkedin.com"><i class="fa fa-linkedin fa-2x"></i></a>
+
+			<p class="h6">
+				@All Rights Reserved <a href="http://www.paradigmOz.com"
+					target="_blank"></a>
+			</p>
+
+		</div>
+	</footer>
+
+</body>
+</html>
