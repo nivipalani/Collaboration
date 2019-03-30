@@ -12,6 +12,13 @@
   background-image: -moz-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
   background-image: -o-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
   background-image: linear-gradient(to right, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);}
+
+span.bg-main {
+	color: #008ba3;
+}
+.btn {
+	background-color: #344367;
+}
 </style>
 
 <div class="container" ng-controller="fcontroller as fc">
@@ -20,7 +27,7 @@
     <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
     	<form role="form" method="post" ng-submit="fc.add()">
 			<fieldset>
-				<h1 align="center">Forum</h1>
+				<h1 align="center"><span class="bg-main">Forum</span></h1>
 				<hr class="colorgraph">
 				<div class="form-group">
                     <input type="text" name="forumname" id="forumname" class="form-control input-lg" placeholder="Forum Name" ng-model="fc.forum.forum_Name">

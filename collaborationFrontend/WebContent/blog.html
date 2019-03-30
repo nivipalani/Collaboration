@@ -25,6 +25,13 @@
 		50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969
 		87.5%, #696969 87.5%, #696969);
 }
+
+span.bg-main {
+	color: #008ba3;
+}
+.btn {
+	background-color: #344367;
+}
 </style>
 
 <div class="container" ng-controller="bcontroller as bc">
@@ -34,7 +41,7 @@
 			class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" method="post" ng-submit="bc.add()">
 
-				<h1 align="center">Blog</h1>
+				<h1 align="center"><span class="bg-main">Blog</span></h1>
 				<hr class="colorgraph">
 				<div class="form-group">
 					<input type="text" name="blogname" id="blogname"

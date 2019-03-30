@@ -1,4 +1,5 @@
 <style>
+
 .colorgraph {
 	height: 5px;
 	border-top: 0;
@@ -8,6 +9,12 @@
   background-image: -moz-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
   background-image: -o-linear-gradient(left, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
   background-image: linear-gradient(to right, #696969, #696969 12.5%, #696969 12.5%, #696969 25%, #696969 25%, #696969 37.5%, #696969 37.5%, #696969 50%, #696969 50%, #696969 62.5%, #696969 62.5%, #696969 75%, #696969 75%, #696969 87.5%, #696969 87.5%, #696969);
+}
+span.bg-main {
+	color: #008ba3;
+}
+.btn {
+	background-color: #344367;
 }
 </style>
 <script>
@@ -81,13 +88,13 @@
 </script>
 
 
-<div class="container" ng-controller="ucontroller as uc">
+<div class="container body" ng-controller="ucontroller as uc">
 	<div class="row" style="margin-top: 60px">
 		<div
 			class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
 			<form role="form" ng-submit="uc.submit()" method="post">
 				<fieldset>
-					<h1 align="center">Please Sign Up</h1>
+					<h1 align="center"><span class="bg-main">Please Sign Up</span></h1>
 					<hr class="colorgraph">
 					<div class="form-group">
 						<input type="text" name="fname" id="fname"
