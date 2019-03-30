@@ -37,27 +37,23 @@ public class BlogController {
 				return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
 			else
 				return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
-		}
-		else
-		{
+		} else {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
-				
+
 		}
 
 	}
 
 	@PostMapping("/updateBlog")
-	ResponseEntity<Void> updateBlog(@RequestBody Blog blog,HttpSession httpSession) {
-		if(httpSession.getAttribute("userid")!=null)
-		{
-		blog.setCreateDate(new Date());
-		if (blogDao.updateBlog(blog))
-			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
-		else
-			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
-		}
-		else
-		{
+	ResponseEntity<Void> updateBlog(@RequestBody Blog blog, HttpSession httpSession) {
+		if (httpSession.getAttribute("userid") != null) {
+			blog.setUserdetail(userdao.selectOneUser(Integer.parseInt(httpSession.getAttribute("userid").toString())));
+			blog.setCreateDate(new Date());
+			if (blogDao.updateBlog(blog))
+				return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+			else
+				return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+		} else {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 		}
 	}

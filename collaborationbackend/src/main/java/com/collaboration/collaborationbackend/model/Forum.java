@@ -20,7 +20,7 @@ public class Forum {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int forum_Id;
 
-	@Column(nullable = false)
+	@Column(nullable = false,unique=true)
 	String forum_Name;
 
 	@Column(nullable = false)
