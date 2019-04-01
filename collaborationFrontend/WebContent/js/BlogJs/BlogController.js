@@ -13,7 +13,8 @@ angular.module('myApp').controller(
 			};
 
 			curr.add = add;
-
+			curr.blogs=[];
+			show();
 			function add() {
 				curr.blog.status = 'NA';
 				curr.blog.likes = 0;
@@ -25,6 +26,16 @@ angular.module('myApp').controller(
 					alert('Cant add this Blog');
 				})
 
+			}
+
+			function show() {
+				alert('show blog')
+				$http.get('http://localhost:8080/collaborationmiddleware/blog')
+						.then(function(response) {
+							curr.blogs = response.data;
+						}, function(errResponse) {
+							alert('No blogs to display');
+						})
 			}
 
 		})

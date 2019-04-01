@@ -12,5 +12,12 @@ app.config(function($routeProvider){
 		templateUrl : "forum.html"
 	}).when("/job", {
 		templateUrl : "job.html"
+	}).when("/showblog", {
+		templateUrl : "viewallblogs.html"
+	}).when("/showforum", {
+		templateUrl : "viewallforum.html"
+	})
+	.when("/showjob", {
+		templateUrl : "viewalljob.html"
 	})
 });

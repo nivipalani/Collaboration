@@ -70,7 +70,6 @@ public class UserController {
 			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
 		else
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
-
 	}
 
 	@PostMapping("/approve/{userid}")
@@ -81,5 +80,4 @@ public class UserController {
 		else
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 	}
-
 }

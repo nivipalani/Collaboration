@@ -14,6 +14,8 @@ angular.module('myApp').controller(
 			};
 			var rest_uri='http://localhost:8080/collaborationmiddleware/job';
 			curr.submit = submit;
+			curr.jobs=[];
+			show();
 			function submit() {
 //				alert(curr.job.qualification);
 //				alert(curr.job.job_description);
@@ -28,5 +30,14 @@ angular.module('myApp').controller(
 					alert('It cant be added');
 
 				})
+			}
+			function show() {
+				alert('show job')
+				$http.get('http://localhost:8080/collaborationmiddleware/job')
+						.then(function(response) {
+							curr.jobs = response.data;
+						}, function(errResponse) {
+							alert('No jobs to display');
+						})
 			}
 		})

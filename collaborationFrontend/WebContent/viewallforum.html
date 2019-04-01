@@ -1,0 +1,51 @@
+<style>
+#postlist
+{
+border-color: gray;
+border-style: ridge;
+border-width: 2px;
+border-spacing:em;
+margin-top: 2%;
+margin-bottom: 2%;
+}
+.panel-heading,.panel-body,.panel-footer
+{
+margin-left: 2%;
+margin-bottom: 2%;
+}
+</style>
+<div class="container" ng-controller="fcontroller as fc">
+	<div class="row" ng-repeat="vforum in fc.forum">
+		<div class="col-md-12">
+			<div id="postlist">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="text-center">
+							<div class="row">
+								<div class="col-sm-9">
+									<h3 class="pull-left">{{vforum.forum_Name}}</h3>
+								</div>
+								<div class="col-sm-3 date">
+									<h4 class="pull-right">
+										<small><em>Created On:{{vforum.comment_Date}} </em></small>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel-body">{{vforum.forum_Content}}</div>
+
+					<div class="panel-footer">
+						<span class="label label-default">Created By&nbsp;:&nbsp;&nbsp;{{vforum.userdetail.firstName}}&nbsp;{{vforum.userdetail.lastName}}</span>
+						<span class="label label-default pull-right"> <a
+							ng-click="bc.selectoneblog(vblog.blogId)"> Comment <span
+								class="glyphicon glyphicon-pencil"></span>
+						</a>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

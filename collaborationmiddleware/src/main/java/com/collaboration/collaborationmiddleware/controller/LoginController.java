@@ -1,6 +1,5 @@
 package com.collaboration.collaborationmiddleware.controller;
 
-import java.util.Date;
 
 import javax.servlet.http.HttpSession;
 
