@@ -1,5 +1,5 @@
-var app=angular.module('myApp',['ngRoute']);
-app.config(function($routeProvider){
+var app = angular.module('myApp', [ 'ngRoute' ]);
+app.config(function($routeProvider) {
 	$routeProvider.when("/", {
 		templateUrl : "home.html"
 	}).when("/login", {
@@ -16,8 +16,7 @@ app.config(function($routeProvider){
 		templateUrl : "viewallblogs.html"
 	}).when("/showforum", {
 		templateUrl : "viewallforum.html"
-	})
-	.when("/showjob", {
-		templateUrl : "viewalljob.html"
+	}).when("/showjob", {
+		templateUrl : "viewalljobs.html"
 	})
 });

@@ -32,8 +32,8 @@ angular.module('myApp').controller(
 				})
 			}
 			function show() {
-				alert('show job')
-				$http.get('http://localhost:8080/collaborationmiddleware/job')
+				alert('show job');
+				$http.get(rest_uri)
 						.then(function(response) {
 							curr.jobs = response.data;
 						}, function(errResponse) {

@@ -1,0 +1,82 @@
+<style>
+#postlist {
+	border-color: gray;
+	border-width: 2px;
+	border-spacing: em;
+	margin-top: 2%;
+	margin-bottom: 2%;
+	  border-bottom: 1px solid #ddd;
+	
+}
+
+.panel-heading, .panel-body, .panel-footer {
+	margin-left: 2%;
+	margin-bottom: 1%;
+}
+</style>
+<div class="container" ng-controller="jcontroller as jc">
+<h2 align="center" style="color: #008ba3;">Current Openings</h2>
+	<div class="row" ng-repeat="vjob in jc.jobs" style="margin-top: 2%;margin-bottom: 2%">
+		<div class="col-md-12">
+			<div id="postlist">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="text-center">
+							<div class="row">
+							
+								<div class="col-sm-9">
+									<h3 class="pull-left" style="text-decoration: underline;color: #008ba3;">{{vjob.job_Profile}}</h3>
+								</div>
+								<div class="col-sm-3 date">
+									<h4 class="pull-right">
+										<small><em>Posted On&nbsp;:&nbsp;&nbsp;{{vjob.published_Date}} </em></small>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="panel-body">
+						<table>
+							<tr>
+								<td style="font-weight: bold;">Job Description</td>
+								<td>&nbsp;</td>
+								<td>:</td>
+								<td>{{vjob.job_description}}</td>
+							</tr>
+							<tr>
+								<td style="font-weight: bold;">Qualification</td>
+								<td>&nbsp;</td>
+								<td>:</td>
+								<td>{{vjob.qualification}}</td>
+							</tr>
+							<tr>
+								<td style="font-weight: bold;">Vacancy</td>
+								<td>&nbsp;</td>
+								<td>:</td>
+								<td>{{vjob.vacancy}}</td>
+							</tr>
+							<tr>
+								<td style="font-weight: bold;">Salary</td>
+								<td>&nbsp;</td>
+								<td>:</td>
+								<td>{{vjob.salary}}</td>
+							</tr>
+
+						</table>
+
+					</div>
+
+					<!-- 					<div class="panel-footer"> -->
+					<!-- 						<span class="label label-default">Created By&nbsp;:&nbsp;&nbsp;{{vjob.userdetail.firstName}}&nbsp;{{vjob.userdetail.lastName}}</span> -->
+					<!-- 						<span class="label label-default pull-right"> <a -->
+					<!-- 							ng-click="bc.selectoneblog(vblog.blogId)"> Comment <span -->
+					<!-- 								class="glyphicon glyphicon-pencil"></span> -->
+					<!-- 						</a> -->
+					<!-- 						</span> -->
+					<!-- 					</div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
