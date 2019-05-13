@@ -3,6 +3,7 @@ package com.collaboration.collaborationbackend.dao;
 import java.util.List;
 
 import com.collaboration.collaborationbackend.model.Blog;
+import com.collaboration.collaborationbackend.model.LikeDislike;
 
 public interface BlogDao {
 	boolean addBlog(Blog blog);
