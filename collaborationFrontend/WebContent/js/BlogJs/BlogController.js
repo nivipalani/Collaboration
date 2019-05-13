@@ -2,9 +2,20 @@ angular
 		.module('myApp')
 		.controller(
 				'bcontroller',
-				function($scope, $route, $rootScope, $location, $http) {
+				function($scope, $route, $rootScope, $location, $http, bid,
+						blogedit) {
 					var curr = this;
 					curr.blog = {
+						blogId : 0,
+						blogName : '',
+						blogContent : '',
+						userdetail : null,
+						createDate : null,
+						status : '',
+						likes : 0
+					};
+
+					curr.oblog = {
 						blogId : 0,
 						blogName : '',
 						blogContent : '',
@@ -22,14 +33,24 @@ angular
 						userdetail : null
 					};
 
+					curr.likedislike = {
+						dummyid : 0,
+						blog : null,
+						likecount : 0,
+						dislikecount : 0
+					};
+
 					curr.add = add;
-					curr.addcomment = addcomment;
+					curr.reset = reset;
+					// curr.addcomment = addcomment;
+					curr.selectoneblog = selectoneblog;
 
 					curr.blogs = [];
-					curr.blogcomments = [];
+					// curr.blogcomments = [];
 
 					show();
-					showcomment();
+					// showcomment();
+					viewoneblog();
 
 					function add() {
 						curr.blog.status = 'NA';
@@ -39,10 +60,16 @@ angular
 										'http://localhost:8080/collaborationmiddleware/blog',
 										curr.blog).then(function(response) {
 									alert('Blog Added');
+									reset();
 								}, function(errResponse) {
 									alert('Cant add this Blog');
 								})
 
+					}
+
+					function reset() {
+						curr.blog = null;
+						curr.oblog = null;
 					}
 
 					function show() {
@@ -56,31 +83,73 @@ angular
 									alert('No blogs to display');
 								})
 					}
+					function selectoneblog(blogid) {
+						bid.id = blogid;
 
-					function addcomment() {
+						$location.path('/viewoneblog')
+					}
+
+					function viewoneblog() {
+						alert(bid.id);
+						$http.get(
+								'http://localhost:8080/collaborationmiddleware/blog/'
+										+ bid.id).then(function(response) {
+
+							alert(bid.id);
+							if (blogedit.edit == true) {
+								curr.oblog = response.data;
+								blogedit.edit = false;
+
+							} else {
+								// viewmylike();
+								curr.blog = response.data;
+							}
+						}, function(errResponse) {
+							alert('NO Blog found');
+						})
+
+					}
+
+					curr.updatelike=function(blogid) {
+						curr.likedislike.blog.blogId = bid.id;
+						curr.likedislike.likecount = (curr.likedislike.likecount + 1);
 						$http
 								.post(
-										'http://localhost:8080/collaborationmiddleware/blogcomment',
-										curr.blogcomment).then(
+										'http://localhost:8080/collaborationmiddleware/likedislike',
+										curr.likedislike).then(
 										function(response) {
-											alert('Comment added');
-
+											alert('Blog added successfully');
 										}, function(errResponse) {
-											alert('not added');
+											alert('Blog Not Added');
 										})
+
 					}
 
-					function showcomment() {
-						$http
-								.get(
-										'https://localhost:8080/collaborationmiddleware/blogcomment')
-								.then(function(response) {
-									curr.blogcomments=response.data;
+					// function addcomment() {
+					// curr.blogcomment.blog = '';
+					// curr.blogcomment.userdetail = '';
+					// $http
+					// .post(
+					// 'http://localhost:8080/collaborationmiddleware/blogcomment',
+					// curr.blogcomment).then(
+					// function(response) {
+					// alert('Comment added');
+					//
+					// }, function(errResponse) {
+					// alert('not added');
+					// })
+					// }
 
-								},function(errResponse)
-								{
-									alert('no comments to display');
-								})
-					}
+					// function showcomment() {
+					// $http
+					// .get(
+					// 'https://localhost:8080/collaborationmiddleware/blogcomment')
+					// .then(function(response) {
+					// curr.blogcomments = response.data;
+					//
+					// }, function(errResponse) {
+					// alert('no comments to display');
+					// })
+					// }
 
 				})

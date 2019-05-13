@@ -32,6 +32,7 @@ public class BlogCommentController {
 
 	@PostMapping
 	ResponseEntity<Void> addComment(@RequestBody BlogComment blogcomment) {
+		blogcomment.setBlogComment_Date(new Date());
 		if (blogcommentdao.createBlogComment(blogcomment))
 			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
 		else

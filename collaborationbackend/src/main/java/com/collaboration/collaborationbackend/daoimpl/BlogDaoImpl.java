@@ -100,4 +100,32 @@ public class BlogDaoImpl implements BlogDao {
 
 	}
 
+	public boolean approveBlog(Blog blog) {
+		// TODO Auto-generated method stub
+		try {
+			blog.setStatus("A");
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+
+	public boolean rejectBlog(Blog blog) {
+		// TODO Auto-generated method stub
+		try {
+			blog.setStatus("NA");
+			sessionFactory.getCurrentSession().update(blog);
+			return true;
+
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
+
+	
+
 }

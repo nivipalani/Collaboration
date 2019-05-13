@@ -34,6 +34,11 @@ public class UserDetail {
 	
 	@Column(nullable=false)
 	String isOnline;
+	
+	@Column(nullable=false)
+	String userType;
+	
+	
 
 	public int getUser_Id() {
 		return user_Id;
@@ -98,6 +103,15 @@ public class UserDetail {
 	public void setIsOnline(String isOnline) {
 		this.isOnline = isOnline;
 	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+	
 	
 	
 }

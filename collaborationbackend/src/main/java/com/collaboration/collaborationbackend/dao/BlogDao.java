@@ -19,7 +19,10 @@ public interface BlogDao {
 	
 	List<Blog> selectUserBlog(int userId);
 	
-//	boolean incrementLikes(Blog blog);
-//	
+	boolean approveBlog(Blog blog);
+	
+	boolean rejectBlog(Blog blog);
+
+	
 //	boolean incrementDisLikes(Blog blog);
 }

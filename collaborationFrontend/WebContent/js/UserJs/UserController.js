@@ -10,7 +10,8 @@ angular.module('myApp').controller(
 				emailId : '',
 				role : '',
 				status : '',
-				isOnline : ''
+				isOnline : '',
+				userType : ''
 			};
 
 			curr.submit = submit;
@@ -27,7 +28,6 @@ angular.module('myApp').controller(
 				}, function(errResponse) {
 					alert('Failed to register');
 				})
-
 			}
 
 			function login() {
@@ -38,7 +38,6 @@ angular.module('myApp').controller(
 				}, function(errResponse) {
 					alert('Login Unsuccessful');
 				})
-
 			}
 
 		})

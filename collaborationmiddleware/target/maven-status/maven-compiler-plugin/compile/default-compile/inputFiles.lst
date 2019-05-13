@@ -1,6 +1,10 @@
 D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\config\WebConfig.java
+D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\FriendController.java
 D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\config\DispatcherServletConfig.java
+D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\LoginController.java
 D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\JobController.java
+D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\ForumCommentController.java
 D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\BlogController.java
 D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\UserController.java
 D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\ForumController.java
+D:\NiiT\Collaboration\collaborationmiddleware\src\main\java\com\collaboration\collaborationmiddleware\controller\BlogCommentController.java

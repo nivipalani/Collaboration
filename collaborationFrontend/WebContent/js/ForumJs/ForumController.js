@@ -12,7 +12,9 @@ angular.module('myApp').controller(
 			}
 
 			curr.add = add;
-			curr.forum = [];
+			
+			curr.forums = [];
+			
 			show();
 
 			function add() {
@@ -30,7 +32,7 @@ angular.module('myApp').controller(
 				alert('show forum')
 				$http.get('http://localhost:8080/collaborationmiddleware/forum')
 						.then(function(response) {
-							curr.forum = response.data;
+							curr.forums = response.data;
 						}, function(errResponse) {
 							alert('No forum to display');
 						})

@@ -1,4 +1,12 @@
-var app = angular.module('myApp', [ 'ngRoute' ]);
+var app = angular.module('myApp', [ 'ngRoute']);
+app.value('bid', {
+	id : 141
+});
+app.value('blogedit',{
+	edit:false
+});
+
+
 app.config(function($routeProvider) {
 	$routeProvider.when("/", {
 		templateUrl : "home.html"
@@ -18,5 +26,9 @@ app.config(function($routeProvider) {
 		templateUrl : "viewallforum.html"
 	}).when("/showjob", {
 		templateUrl : "viewalljobs.html"
+	}).when("/comment", {
+		templateUrl : "comment.html"
+	}).when("/viewoneblog", {
+		templateUrl : "viewoneblog.html"
 	})
 });

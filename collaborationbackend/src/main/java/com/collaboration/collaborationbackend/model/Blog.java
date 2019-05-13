@@ -37,8 +37,6 @@ public class Blog {
 	@Column(nullable = false)
 	String status;
 
-	@Column(nullable = false)
-	int likes;
 
 	public int getBlogId() {
 		return blogId;
@@ -89,12 +87,6 @@ public class Blog {
 		this.status = status;
 	}
 
-	public int getLikes() {
-		return likes;
-	}
-
-	public void setLikes(int likes) {
-		this.likes = likes;
-	}
+	
 
 }

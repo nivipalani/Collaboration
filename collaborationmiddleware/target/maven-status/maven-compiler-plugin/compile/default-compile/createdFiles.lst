@@ -1,6 +1,10 @@
-com\collaboration\collaborationmiddleware\config\WebConfig.class
+com\collaboration\collaborationmiddleware\controller\FriendController.class
 com\collaboration\collaborationmiddleware\controller\BlogController.class
-com\collaboration\collaborationmiddleware\controller\JobController.class
 com\collaboration\collaborationmiddleware\controller\UserController.class
-com\collaboration\collaborationmiddleware\config\DispatcherServletConfig.class
+com\collaboration\collaborationmiddleware\controller\ForumCommentController.class
+com\collaboration\collaborationmiddleware\controller\LoginController.class
 com\collaboration\collaborationmiddleware\controller\ForumController.class
+com\collaboration\collaborationmiddleware\config\WebConfig.class
+com\collaboration\collaborationmiddleware\controller\JobController.class
+com\collaboration\collaborationmiddleware\controller\BlogCommentController.class
+com\collaboration\collaborationmiddleware\config\DispatcherServletConfig.class
