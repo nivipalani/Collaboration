@@ -1,4 +1,3 @@
-
 <style>
 .panel-shadow {
 	box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
@@ -127,6 +126,11 @@
 .post .post-footer .comments-list .comment>.comments-list {
 	margin-left: 50px;
 }
+
+.btn
+{
+background-color: #008ba3;
+}
 </style>
 
 <div class="container" ng-controller="bcontroller as bc">
@@ -149,38 +153,43 @@
 				<div class="post-description">
 					<p>{{bc.blog.blogContent}}</p>
 					<div class="stats">
-						<button class="btn btn-default stat-item" ng-click="bc.updatelike(bc.blog.blogId)"> <i
-							class="fa fa-thumbs-up icon"></i>{{bc.likedislike.likecount}}
-						</button> <button  class="btn btn-default stat-item" ng-click="bc.updatedislike(bc.blog.blogId)"> <i
-							class="fa fa-share icon"></i>{{bc.likedislike.dislikecount}}
+						<button type="button" style="color: white" class="btn btn-default stat-item"
+							ng-click="bc.updatelike(bc.blog.blogId)">
+							{{bc.likedislike.likecount}} &nbsp;&nbsp;&nbsp; <span
+								class="fa fa-thumbs-up icon""></span>
+						</button>
+						<button type="button" style="color: white" class="btn btn-default stat-item"
+							ng-click="bc.updatedislike(bc.blog.blogId)">
+							{{bc.likedislike.dislikecount}} &nbsp;&nbsp;&nbsp;<span
+								class="fa fa-thumbs-down icon""></span>
 						</button>
 					</div>
 				</div>
-<!-- 				<div class="post-footer"> -->
-<!-- 					<div class="input-group"> -->
-<!-- 						<form role="form" method="post" ng-submit="bc.addcomment()"> -->
-<!-- 							<input class="form-control" placeholder="Add a comment" -->
-<!-- 								type="text" ng-model="bc.blogcomment.blog_Comment"> -->
-<!-- 							<button> -->
-<!-- 								<i class="fa fa-pencil"></i> -->
-<!-- 							</button> -->
-<!-- 						</form> -->
-<!-- 					</div> -->
-<!-- 					<ul class="comments-list" -->
-<!-- 						ng-repeat="vblogcomment in bc.blogcomments"> -->
-<!-- 						<li class="comment"><a class="pull-left" href="#"> <img -->
-<!-- 								class="avatar" src="http://bootdey.com/img/Content/user_1.jpg" -->
-<!-- 								alt="avatar"> -->
-<!-- 						</a> -->
-<!-- 							<div class="comment-body"> -->
-<!-- 								<div class="comment-heading"> -->
-<!-- 									<h4 class="user">{{vblogcomment.userdetail.firstName}}&nbsp;{{vblogcomment.userdetail.lastName}}</h4> -->
-<!-- 									<h5 class="time">{{vblogcomment.blogComment_Date}}</h5> -->
-<!-- 								</div> -->
-<!-- 								<p>{{vblogcomment.blog_Comment}}</p> -->
-<!-- 							</div></li> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
+								<div class="post-footer">
+									<div class="input-group">
+										<form role="form" method="post" ng-submit="bc.addcomment()">
+											<textarea class="form-control" placeholder="Add a comment"
+												 ng-model="bc.blogcomment.blog_Comment"></textarea>
+											<button>
+												<i class="fa fa-pencil"></i>
+											</button>
+										</form>
+									</div>
+									<ul class="comments-list"
+										ng-repeat="vblogcomment in bc.blogcomments">
+										<li class="comment"><a class="pull-left" href="#"> <img
+												class="avatar" src="http://bootdey.com/img/Content/user_1.jpg"
+												alt="avatar">
+										</a>
+											<div class="comment-body">
+												<div class="comment-heading">
+													<h4 class="user">{{vblogcomment.userdetail.firstName}}&nbsp;{{vblogcomment.userdetail.lastName}}</h4>
+													<h5 class="time">{{vblogcomment.blogComment_Date}}</h5>
+												</div>
+												<p>{{vblogcomment.blog_Comment}}</p>
+											</div></li>
+									</ul>
+								</div>
 			</div>
 		</div>
 	</div>

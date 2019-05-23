@@ -45,10 +45,12 @@
 </script>
 <style>
 .navbar {
-	background-color: #303030;
+	background-color: #008ba3;
 	  font-size: 20px;
 	font-family: casteller;
 }
+
+
 
 .dropdown {
 	border-radius: 0;
@@ -58,7 +60,7 @@
 }
 
 .dropdown-menu {
-	background: #344367;
+	background: #008ba3;
 	border: 0;
 	top: 80%;
 	border-radius: 0px 0px 5px 5px;
@@ -66,7 +68,7 @@
 }
 
 .dropdown-item:hover {
-	background: none;
+	background: #008ba3;
 	font-color: #fff;
 }
 
@@ -83,7 +85,7 @@
 }
 
 .footer {
-	background-color: #303030;
+	background-color: #008ba3;
 	text-align: center;
 	
 }
@@ -98,17 +100,20 @@
 	font-size: 30px;
 	font-weight: bolder;
 }
+
 </style>
-<body ng-app="myApp">
-	<nav class="navbar navbar-expand-sm   navbar-light bg-light">
+</head>
+<!-- bg-light -->
+<body ng-app="myApp" >
+	<nav class="navbar navbar-expand-sm   navbar-light ">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarTogglerDemo03"
 			aria-controls="navbarTogglerDemo03" aria-expanded="false"
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#/"><span class="bg-main">DOMAIN
-				BEE</span></a>
+		<a class="navbar-brand" href="#/">DOMAIN BEE
+				</a>
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -143,7 +148,7 @@
 			</ul>
 		</div>
 	</nav>
-	<div style="min-height: 450px" ng-view></div>
+	<div style="min-height: 470px" ng-view></div>
 	<footer class="footer">
 		<div>
 			<a href="https://www.facebook.com"><i

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.collaboration.collaborationbackend.dao.BlogDao;
 import com.collaboration.collaborationbackend.model.Blog;
+import com.collaboration.collaborationbackend.model.LikeDislike;
 
 @Repository("blogDao")
 @Transactional
@@ -20,7 +21,12 @@ public class BlogDaoImpl implements BlogDao {
 	public boolean addBlog(Blog blog) {
 		// TODO Auto-generated method stub
 		try {
+			LikeDislike likedislike=new LikeDislike();
+			likedislike.setBlog(blog);
+			likedislike.setDislikecount(0);
+			likedislike.setLikecount(0);
 			sessionFactory.getCurrentSession().save(blog);
+			sessionFactory.getCurrentSession().save(likedislike);
 			return true;
 
 		} catch (Exception e) {

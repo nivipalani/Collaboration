@@ -16,14 +16,13 @@ public class LikeDislikeDaoImpl implements LikeDislikeDao{
 	SessionFactory sessionFactory;
 
 	public boolean updateLikesDislikes(LikeDislike likedislike) {
-		// TODO Auto-generated method stub
 		try {
-
-			sessionFactory.getCurrentSession().saveOrUpdate(likedislike);
+			sessionFactory.getCurrentSession().update(likedislike);
 			return true;
 
 		} catch (Exception e) {
 			// TODO: handle exception
+			System.out.println(e.getMessage());
 			return false;
 		}
 	}

@@ -54,6 +54,5 @@ public class LikeDislike {
 	public void setDislikecount(int dislikecount) {
 		this.dislikecount = dislikecount;
 	}
-	
-	
+		
 }
