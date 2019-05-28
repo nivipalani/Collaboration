@@ -1,6 +1,5 @@
 package com.collaboration.collaborationmiddleware.controller;
 
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,98 +19,35 @@ public class LoginController {
 	UserDetailDao userdetaildao;
 
 	@PostMapping("/login")
-	ResponseEntity<Void> loginpage(@RequestBody UserDetail userdetail,HttpSession httpSession) {
-		UserDetail existinguser=userdetaildao.selectOneUserByEmail(userdetail.getEmailId());
-		if(existinguser.getPassword().equals(userdetail.getPassword()))
+	ResponseEntity<UserDetail> loginpage(@RequestBody UserDetail userdetail, HttpSession httpSession) {
+		UserDetail existinguser = userdetaildao.selectOneUserByEmail(userdetail.getEmailId());
+		if(existinguser==null)
 		{
-			httpSession.setAttribute("userid",existinguser.getUser_Id());
-			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
-			
+			return new ResponseEntity<UserDetail>(existinguser,HttpStatus.NOT_ACCEPTABLE);
 		}
-		else
+		else if (existinguser.getPassword().equals(userdetail.getPassword())) {
+			existinguser.setIsOnline("true");
+			userdetaildao.updateUserDetail(existinguser);
+			httpSession.setAttribute("userid", existinguser.getUser_Id());
+			httpSession.setAttribute("emailid", existinguser.getEmailId());
+			return new ResponseEntity<UserDetail>(existinguser,HttpStatus.ACCEPTED);
+
+		} else
+			return new ResponseEntity<UserDetail>(existinguser,HttpStatus.NOT_ACCEPTABLE);
+	}
+
+	@PostMapping("/logout")
+	ResponseEntity<Void> logoutpage(HttpSession httpSession) {
+		UserDetail existinguser = userdetaildao.selectOneUserByEmail(httpSession.getAttribute("emailid").toString());
+		existinguser.setIsOnline("false");
+		if (userdetaildao.updateUserDetail(existinguser)) {
+			httpSession.invalidate();
+			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+
+		} else {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+		}
+
 	}
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

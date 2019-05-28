@@ -3,6 +3,8 @@ package com.collaboration.collaborationmiddleware.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,22 +28,27 @@ public class BlogCommentController {
 
 	@Autowired
 	BlogCommentDao blogcommentdao;
-	
+
 	@Autowired
 	BlogDao blogdao;
 
 	@PostMapping
-	ResponseEntity<Void> addComment(@RequestBody BlogComment blogcomment) {
-		blogcomment.setBlogComment_Date(new Date());
-		if (blogcommentdao.createBlogComment(blogcomment))
-			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
-		else
+	ResponseEntity<Void> addComment(@RequestBody BlogComment blogcomment, HttpSession httpSession) {
+		if (httpSession.getAttribute("userid") != null) {
+			blogcomment.setBlogComment_Date(new Date());
+			if (blogcommentdao.createBlogComment(blogcomment))
+				return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
+			else
+				return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+		} else {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
+		}
 	}
 
 	@PutMapping("/updateBlogComment/{blogcommentid}/{comment}")
-	ResponseEntity<Void> updateComment(@PathVariable("blogcommentid") int blogcomment_id,@PathVariable("comment")String blog_Comment) {
-		BlogComment blogcomment=blogcommentdao.selectOneBlogComment(blogcomment_id);
+	ResponseEntity<Void> updateComment(@PathVariable("blogcommentid") int blogcomment_id,
+			@PathVariable("comment") String blog_Comment) {
+		BlogComment blogcomment = blogcommentdao.selectOneBlogComment(blogcomment_id);
 		blogcomment.setBlogComment_Date(new Date());
 		blogcomment.setBlog_Comment(blog_Comment);
 		if (blogcommentdao.updateBlogComment(blogcomment))

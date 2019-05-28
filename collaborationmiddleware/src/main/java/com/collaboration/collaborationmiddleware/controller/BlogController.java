@@ -43,7 +43,6 @@ public class BlogController {
 				return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 		} else {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
-
 		}
 	}
 
@@ -104,37 +103,27 @@ public class BlogController {
 		else
 			return new ResponseEntity<Blog>(blog, HttpStatus.ACCEPTED);
 	}
-	
+
 	@PostMapping("/likedislike")
-	ResponseEntity<Void> InsertOrUpdateBlogLike(@RequestBody LikeDislike likedislike)
-	{
-		if(likedislikedao.updateLikesDislikes(likedislike))
-		{
+	ResponseEntity<Void> InsertOrUpdateBlogLike(@RequestBody LikeDislike likedislike) {
+		if (likedislikedao.updateLikesDislikes(likedislike)) {
 			return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
-		}
-		else
-		{
+		} else {
 			return new ResponseEntity<Void>(HttpStatus.NOT_ACCEPTABLE);
 		}
 	}
-	
+
 	@GetMapping("/likedislike/{blogid}")
-	ResponseEntity<LikeDislike> getBloglikes(@PathVariable("blogid") int blog_id)
-	{
-		LikeDislike lblog=likedislikedao.selectLikeDislike(blog_id);
-		if(lblog!=null)
-		{
-			return new ResponseEntity<LikeDislike>(lblog,HttpStatus.ACCEPTED);
-		}
-		else
-		{
-			LikeDislike lblog1=new LikeDislike();
+	ResponseEntity<LikeDislike> getBloglikes(@PathVariable("blogid") int blog_id) {
+		LikeDislike lblog = likedislikedao.selectLikeDislike(blog_id);
+		if (lblog != null) {
+			return new ResponseEntity<LikeDislike>(lblog, HttpStatus.ACCEPTED);
+		} else {
+			LikeDislike lblog1 = new LikeDislike();
 			lblog1.setBlog(blogDao.getOneBlog(blog_id));
-			return new ResponseEntity<LikeDislike>(lblog1,HttpStatus.NOT_ACCEPTABLE);
-			
+			return new ResponseEntity<LikeDislike>(lblog1, HttpStatus.NOT_ACCEPTABLE);
+
 		}
 	}
-	
-
 
 }

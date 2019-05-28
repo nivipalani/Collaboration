@@ -23,6 +23,9 @@
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>
+
 
 <script src="js/app.js"></script>
 <script src="js/UserJs/UserController.js"></script>
@@ -46,11 +49,9 @@
 <style>
 .navbar {
 	background-color: #008ba3;
-	  font-size: 20px;
+	font-size: 20px;
 	font-family: casteller;
 }
-
-
 
 .dropdown {
 	border-radius: 0;
@@ -87,7 +88,6 @@
 .footer {
 	background-color: #008ba3;
 	text-align: center;
-	
 }
 
 .h6 {
@@ -100,11 +100,10 @@
 	font-size: 30px;
 	font-weight: bolder;
 }
-
 </style>
 </head>
 <!-- bg-light -->
-<body ng-app="myApp" >
+<body ng-app="myApp">
 	<nav class="navbar navbar-expand-sm   navbar-light ">
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarTogglerDemo03"
@@ -112,10 +111,9 @@
 			aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<a class="navbar-brand" href="#/">DOMAIN BEE
-				</a>
+		<a class="navbar-brand" href="#/">DOMAIN BEE </a>
 
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo03" ng-controller="ucontroller as uc">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item"><a class="nav-link" href="#/">Home <span
 						class="sr-only">(current)</span></a></li>
@@ -145,6 +143,7 @@
 						<a class="dropdown-item" href="#/job">Add Job</a> <a
 							class="dropdown-item" href="#/showjob">Show Job</a>
 					</div></li>
+				<li class="nav-item"><a class="nav-link" href="" ng-click="uc.logout()">Logout</a></li>
 			</ul>
 		</div>
 	</nav>

@@ -40,16 +40,16 @@ angular
 
 					curr.add = add;
 					curr.reset = reset;
-					// curr.addcomment = addcomment;
+					curr.addcomment = addcomment;
 					curr.selectoneblog = selectoneblog;
 					curr.updatelike = updatelike;
 					curr.updatedislike = updatedislike;
 
 					curr.blogs = [];
-					// curr.blogcomments = [];
+					curr.blogcomments = [];
 
 					show();
-					// showcomment();
+					showcomment();
 					viewoneblog();
 
 					function add() {
@@ -78,7 +78,7 @@ angular
 						$http
 								.get(
 										'http://localhost:8080/collaborationmiddleware/blog')
-								.then(function(responseb) {
+								.then(function(response) {
 									curr.blogs = response.data;
 								}, function(errResponse) {
 									alert('No blogs to display');
@@ -146,31 +146,36 @@ angular
 										})
 					}
 
-					// function addcomment() {
-					// curr.blogcomment.blog = '';
-					// curr.blogcomment.userdetail = '';
-					// $http
-					// .post(
-					// 'http://localhost:8080/collaborationmiddleware/blogcomment',
-					// curr.blogcomment).then(
-					// function(response) {
-					// alert('Comment added');
-					//
-					// }, function(errResponse) {
-					// alert('not added');
-					// })
-					// }
+					function addcomment() {
+						curr.blogcomment.blog.blogId = bid.id;
+						// curr.blogcomment.userdetail.user_Id =
+						// $rootScope.currentuser.id;
+						$http
+								.post(
+										'http://localhost:8080/collaborationmiddleware/blogcomment',
+										curr.blogcomment).then(
+										function(response) {
+											alert('Comment added');
+											resetcomment();
+										}, function(errResponse) {
+											alert('not added');
+										})
+					}
 
-					// function showcomment() {
-					// $http
-					// .get(
-					// 'https://localhost:8080/collaborationmiddleware/blogcomment')
-					// .then(function(response) {
-					// curr.blogcomments = response.data;
-					//
-					// }, function(errResponse) {
-					// alert('no comments to display');
-					// })
-					// }
+					function resetcomment() {
+						curr.blogcomment = null;
+					}
+
+					 function showcomment() {
+						$http
+								.get(
+										'https://localhost:8080/collaborationmiddleware/blogcomment')
+								.then(function(response) {
+									curr.blogcomments = response.data;
+
+								}, function(errResponse) {
+									alert('no comments to display');
+								})
+					}
 
 				})

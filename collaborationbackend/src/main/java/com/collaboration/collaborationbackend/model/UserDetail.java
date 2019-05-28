@@ -9,36 +9,31 @@ import javax.persistence.Table;
 
 @Entity
 public class UserDetail {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	int user_Id;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String firstName;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String lastName;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String password;
-	
-	@Column(nullable=false,unique=true)
+
+	@Column(nullable = false, unique = true)
 	String emailId;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String role;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String status;
-	
-	@Column(nullable=false)
+
+	@Column(nullable = false)
 	String isOnline;
-	
-	@Column(nullable=false)
-	String userType;
-	
-	
 
 	public int getUser_Id() {
 		return user_Id;
@@ -104,14 +99,4 @@ public class UserDetail {
 		this.isOnline = isOnline;
 	}
 
-	public String getUserType() {
-		return userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
-	
-	
-	
 }
